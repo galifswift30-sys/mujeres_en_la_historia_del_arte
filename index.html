@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Parisienne&display=swap" rel="stylesheet">
+<title>Mujeres en la Historia del Arte | ODS 5</title>
+<style>
+:root{
+  --bg:#f7f3ee; --card:#fffdf9; --ink:#292522; --muted:#706860;
+  --accent:#8d4f72; --accent2:#c88c5a; --line:#e5dbd1;
+  --dark:#302633; --good:#47745d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Cormorant Garamond', Georgia, 'Times New Roman', serif;background:var(--bg);color:var(--ink);line-height:1.5}
+button,input,select{font:inherit}
+.hero{background:linear-gradient(135deg,#332633 0%,#6f405e 55%,#b87968 100%);color:white;padding:34px 6% 46px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.18)}
+.hero:before{width:340px;height:340px;right:-80px;top:-160px}.hero:after{width:240px;height:240px;left:-130px;bottom:-170px}
+.nav{display:flex;justify-content:space-between;align-items:center;max-width:1180px;margin:auto;gap:20px}
+.logo{font-weight:800;letter-spacing:.3px}.nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:.92rem}
+.hero-content{max-width:1180px;margin:55px auto 0;position:relative;z-index:1}
+.kicker{display:inline-block;padding:6px 11px;border:1px solid rgba(255,255,255,.35);border-radius:999px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(2.3rem,6vw,5.2rem);line-height:.98;max-width:850px;margin:18px 0}
+.hero p{max-width:720px;font-size:1.08rem;color:#f4e9eb}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{border:0;border-radius:12px;padding:12px 17px;cursor:pointer;font-weight:700}
+.btn.primary{background:#fff;color:var(--dark)}.btn.secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.container{max-width:1180px;margin:auto;padding:42px 6%}
+.section-title{font-size:2rem;margin:0 0 8px}.section-sub{color:var(--muted);margin-top:0}
+.ods-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+.ods{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 5px 18px rgba(50,35,25,.05)}
+.ods .num{font-size:2.3rem;font-weight:900;color:var(--accent)}
+.ods h3{margin:8px 0 4px}.ods p{margin:0;color:var(--muted);font-size:.93rem}
+.toolbar{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:12px;margin:25px 0}
+input,select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);outline:none}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(141,79,114,.12)}
+.art-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 7px 20px rgba(50,35,25,.06);display:flex;flex-direction:column}
+.art{height:185px;position:relative;overflow:hidden;background:#ddd}
+.art span{position:absolute;display:block}
+.a1{background:linear-gradient(135deg,#151318,#7c4b3d)} .a1:before{content:"";position:absolute;width:150px;height:200px;background:#b98d72;border-radius:48% 48% 20% 20%;left:70px;top:35px;transform:rotate(-8deg)} .a1:after{content:"";position:absolute;width:100px;height:70px;background:#261a1b;left:93px;top:20px;border-radius:50%}
+.a2{background:radial-gradient(circle at 40% 40%,#e7c1b8 0 15%,transparent 16%),linear-gradient(135deg,#2c5666,#c46b67)} .a2:before{content:"";position:absolute;width:100px;height:145px;border-radius:48%;background:#d49c8b;left:83px;top:28px;transform:rotate(9deg)} .a2:after{content:"";position:absolute;width:160px;height:26px;background:#2b7a79;left:40px;top:120px;transform:rotate(-12deg)}
+.a3{background:linear-gradient(150deg,#f2e8cf,#d1b889)} .a3:before{content:"";position:absolute;width:150px;height:150px;border:28px solid #5c8065;border-radius:50%;left:65px;top:15px}.a3:after{content:"";position:absolute;width:18px;height:150px;background:#8b5c45;left:136px;top:15px;transform:rotate(18deg)}
+.a4{background:repeating-linear-gradient(45deg,#e3d2c5 0 14px,#7a536f 14px 28px)} .a4:before{content:"";position:absolute;width:115px;height:115px;border-radius:50%;background:#e6b7a1;left:85px;top:32px}.a4:after{content:"";position:absolute;width:140px;height:35px;background:#302533;left:72px;top:82px;transform:rotate(-25deg)}
+.a5{background:linear-gradient(135deg,#d7b7aa,#6d536b)} .a5:before{content:"";position:absolute;width:120px;height:120px;border-radius:30px 50% 30px 50%;background:#c98c6f;left:78px;top:34px;transform:rotate(18deg)} .a5:after{content:"";position:absolute;width:70px;height:150px;background:#3d3447;left:126px;top:20px;transform:rotate(-18deg);opacity:.8}
+.a6{background:linear-gradient(160deg,#263b39,#c08a61)} .a6:before{content:"";position:absolute;width:170px;height:95px;border-radius:50%;background:#d2b28f;left:50px;top:62px;transform:rotate(-20deg)} .a6:after{content:"";position:absolute;width:65px;height:65px;border-radius:50%;border:12px solid #7b4f55;left:120px;top:34px}
+.a7{background:linear-gradient(135deg,#f0d7c5,#b35e67)} .a7:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:#f5d4bf;left:76px;top:24px;box-shadow:70px 20px 0 -22px #70495c}
+.a7:after{content:"";position:absolute;width:160px;height:18px;background:#6d405b;left:50px;top:125px;transform:rotate(18deg)}
+.a8{background:linear-gradient(135deg,#1f3447,#d2a25d)} .a8:before{content:"";position:absolute;width:150px;height:120px;background:#e1b48e;left:58px;top:42px;clip-path:polygon(50% 0,100% 100%,0 100%)} .a8:after{content:"";position:absolute;width:80px;height:80px;border:12px solid #704a5b;border-radius:50%;left:98px;top:35px}
+.a9{background:linear-gradient(135deg,#b55d58,#efe1cb)} .a9:before{content:"";position:absolute;width:160px;height:80px;background:#9d6a48;border-radius:80% 20% 80% 20%;left:52px;top:56px;transform:rotate(-15deg)} .a9:after{content:"";position:absolute;width:50px;height:50px;border-radius:50%;background:#e4bda3;left:120px;top:33px}
+.a10{background:radial-gradient(circle,#f4d9a5 0 7%,transparent 8%),linear-gradient(135deg,#395f52,#a47b52)} .a10:before{content:"";position:absolute;width:140px;height:140px;border-radius:50%;border:22px solid #c88c5a;left:68px;top:20px}
+.a11{background:linear-gradient(135deg,#d5c2ad,#5a6570)} .a11:before{content:"";position:absolute;width:110px;height:155px;background:#e5c5b0;left:82px;top:25px;border-radius:50% 50% 35% 35%}
+.a11:after{content:"";position:absolute;width:150px;height:50px;background:#394955;left:62px;top:120px;border-radius:50%}
+.a12{background:linear-gradient(135deg,#7c4f5e,#e4b36e)} .a12:before{content:"";position:absolute;width:150px;height:150px;border:16px solid #f0d5bc;border-radius:50%;left:65px;top:20px;transform:rotate(35deg)} .a12:after{content:"";position:absolute;width:70px;height:110px;background:#503346;left:108px;top:45px;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.card-body{padding:18px}.tag{display:inline-block;background:#f0e4eb;color:var(--accent);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;border-radius:999px;padding:5px 9px}
+.card h3{margin:10px 0 3px;font-size:1.25rem}.meta{color:var(--muted);font-size:.88rem}.card p{color:#5e5650;font-size:.94rem}
+.card-actions{display:flex;gap:8px;margin-top:14px}.small{padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:700}.small:hover{border-color:var(--accent);color:var(--accent)}
+.timeline{border-left:3px solid #d9c5cf;margin:25px 0 0 12px;padding-left:24px}
+.event{position:relative;margin:0 0 24px}.event:before{content:"";position:absolute;left:-34px;top:6px;width:13px;height:13px;background:var(--accent);border:3px solid var(--bg);border-radius:50%}
+.event h3{margin:0}.event p{margin:3px 0;color:var(--muted)}
+.quiz{background:var(--dark);color:#fff;border-radius:22px;padding:30px;margin-top:30px}
+.quiz p{color:#e9dfe6}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.answer{background:#fff;color:var(--ink);border:0;border-radius:12px;padding:13px;cursor:pointer;text-align:left}.answer:hover{transform:translateY(-1px)}.result{font-weight:800;margin-top:15px;min-height:24px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.panel h3{margin-top:0}.panel ul{padding-left:20px}.panel li{margin:8px 0}
+footer{background:#262128;color:#ddd;padding:30px 6%;margin-top:40px}footer .foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer p{margin:0;font-size:.9rem}
+.empty{padding:30px;text-align:center;color:var(--muted);grid-column:1/-1}
+.modal{position:fixed;inset:0;background:rgba(20,15,20,.65);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.modal.open{display:flex}.modal-box{background:var(--card);max-width:700px;width:100%;max-height:88vh;overflow:auto;border-radius:20px;padding:28px;position:relative}.close{position:absolute;right:16px;top:14px;border:0;background:none;font-size:1.6rem;cursor:pointer}.stat{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}.stat div{background:#f2e8ed;padding:10px 13px;border-radius:12px;color:var(--accent);font-weight:800}
+@media(max-width:720px){.nav a{display:none}.toolbar{grid-template-columns:1fr}.about{grid-template-columns:1fr}.hero-content{margin-top:40px}}
+
+/* ✦ Tema angelical: tipografía elegante, acuarelas suaves y formas orgánicas ✦ */
+:root{
+  --bg:#fbf7f4; --card:rgba(255,253,251,.90); --ink:#3b3040; --muted:#776c78;
+  --accent:#9a6a8f; --accent2:#d8b47c; --line:#eadfe6; --dark:#403348; --good:#66836d;
+}
+body{
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255,255,255,.95), transparent 25%),
+    radial-gradient(circle at 88% 18%, rgba(238,222,239,.65), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(246,229,213,.55), transparent 35%),
+    var(--bg);
+  color:var(--ink);
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.18;
+  background-image:radial-gradient(circle,#c5a7bc 1px,transparent 1px);
+  background-size:32px 32px;
+}
+h1,h2,h3,.logo,.kicker,.tag,.btn,.small,.nav,.meta,.num,.stat,.quiz,
+.toolbar input,.toolbar select{
+  font-family:'Cormorant Garamond',Georgia,serif;
+}
+h1,h2,h3{font-style:italic;font-weight:600}
+h1{font-family:'Parisienne','Cormorant Garamond',cursive;font-weight:400}
+.logo{font-style:italic;font-size:1.25rem}
+.hero{
+  background:
+    radial-gradient(ellipse at 18% 45%,rgba(255,245,248,.32),transparent 28%),
+    radial-gradient(ellipse at 78% 20%,rgba(255,237,215,.25),transparent 25%),
+    linear-gradient(135deg,#44354a 0%,#77546f 48%,#b98983 100%);
+}
+.hero:before,.hero:after{
+  border:0;background:rgba(255,255,255,.08);
+  box-shadow:0 0 0 1px rgba(255,255,255,.1);
+}
+.hero:before{width:430px;height:260px;right:-90px;top:-145px;border-radius:55% 45% 60% 40%;transform:rotate(-18deg)}
+.hero:after{width:300px;height:190px;left:-150px;bottom:-125px;border-radius:45% 55% 40% 60%;transform:rotate(18deg)}
+.kicker{background:rgba(255,255,255,.08);font-style:italic}
+.hero p{font-size:1.18rem}
+.btn{border-radius:999px}
+.ods,.card,.panel{
+  border-radius:28px;border-color:rgba(198,169,191,.45);
+  box-shadow:0 12px 30px rgba(92,67,88,.08);
+  backdrop-filter:blur(5px);
+}
+.ods{position:relative;overflow:hidden}
+.ods:after{content:"✦";position:absolute;right:18px;top:13px;color:rgba(154,106,143,.28);font-size:1.8rem}
+.ods .num{font-style:italic}
+.card{border-radius:26px}
+.card .art{height:200px;filter:saturate(.82) brightness(1.04)}
+.card h3{font-size:1.45rem}
+.tag{background:#f3e7f0;color:#805b78;font-style:italic}
+.small{border-radius:999px;font-style:italic;background:#fffafc}
+.timeline{border-left:2px solid #d7bfd1}
+.event:before{
+  width:14px;height:14px;left:-33px;top:5px;background:#d3ad72;
+  border:3px solid var(--bg);box-shadow:0 0 0 3px rgba(211,173,114,.14);
+}
+.quiz{
+  border-radius:30px;
+  background:radial-gradient(ellipse at 85% 0%,rgba(255,235,220,.18),transparent 30%),
+             linear-gradient(145deg,#49394d,#6d536b);
+}
+.answer{border-radius:18px;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.02rem}
+.modal-box{border-radius:30px;box-shadow:0 25px 80px rgba(45,30,45,.28)}
+.close{font-family:Georgia,serif;color:#8d6683}
+footer{background:#332a37}
+footer strong{font-family:'Parisienne',cursive;font-size:1.35rem;font-weight:400}
+.art:before,.art:after{filter:blur(.2px)}
+.a1:before{border-radius:52% 48% 38% 62%}
+.a2:before{border-radius:48% 52% 55% 45%;filter:blur(1px)}
+.a3:before{border-radius:58% 42% 52% 48%;transform:rotate(12deg)}
+.a4:before{border-radius:48% 52% 44% 56%}
+.a5:before{border-radius:42% 58% 55% 45%}
+.a6:before{border-radius:54% 46% 48% 52%}
+.a7:before{border-radius:50% 50% 46% 54%}
+.a8:before{clip-path:ellipse(50% 45% at 50% 55%);filter:blur(.5px)}
+.a9:before{border-radius:65% 35% 55% 45%}
+.a11:before{border-radius:54% 46% 40% 60%}
+
+
+.card{
+  --movement-color:#9a6a8f;
+  border-top:4px solid var(--movement-color);
+  overflow:hidden;
+}
+.card .art{
+  background-image:var(--artist-image);
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+.card .art:before,.card .art:after{display:none}
+.card:nth-child(4n+1){--movement-color:#a66a62}
+.card:nth-child(4n+2){--movement-color:#79a39b}
+.card:nth-child(4n+3){--movement-color:#c49a5c}
+.card:nth-child(4n){--movement-color:#8d6a9b}
+.card-body{background:linear-gradient(180deg,rgba(255,253,251,.98),rgba(250,244,248,.92))}
+
+.visual-note{font-size:.9rem;color:var(--muted);font-style:italic;margin-top:-5px}
+
+.reflection{margin-top:22px;padding:24px 26px;border-radius:28px;background:linear-gradient(135deg,rgba(244,214,225,.18),rgba(191,220,196,.16));border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 30px rgba(30,20,30,.12);color:#fff;}
+.reflection h3{font-family:'Parisienne','Cormorant Garamond',cursive;font-size:1.7rem;font-weight:400;margin:0 0 8px;color:#ffe9ef;}
+.reflection p{line-height:1.75;margin:0;color:#f7eef4;}
+.current-artists{margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
+.current-artists h4{font-family:'Parisienne','Cormorant Garamond',cursive;font-size:1.8rem;font-weight:400;color:#ffe9ef;margin:0 0 6px}
+.current-artists-intro{margin:0 0 16px;color:#eee3eb}
+.current-artists-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.current-artist{display:block;text-decoration:none;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:15px;transition:transform .2s ease,background .2s ease}
+.current-artist:hover{transform:translateY(-3px);background:rgba(255,255,255,.13)}
+.current-artist .name{font-weight:800;font-size:1rem;margin-bottom:4px}
+.current-artist .desc{font-size:.86rem;line-height:1.45;color:#e9dfe6;margin-bottom:9px}
+.current-artist .ig{font-size:.84rem;color:#ffdce8;font-weight:700}
+
+.art{background-repeat:no-repeat;background-position:center;background-size:cover;}
+.modal-portrait{width:100%;height:260px;border-radius:24px;background-size:cover;background-position:center;margin-bottom:18px;box-shadow:0 8px 24px rgba(60,40,55,.12);}
+</style>
+</head>
+<body>
+
+<header class="hero" id="inicio">
+  <nav class="nav">
+    <div class="logo">Mujeres en la Historia del Arte</div>
+    <div>
+      <a href="#artistas">Artistas</a>
+      <a href="#linea-tiempo">Línea del tiempo</a>
+      <a href="#ods">Agenda 2030</a>
+    </div>
+  </nav>
+  <div class="hero-content">
+    <span class="kicker">Arte plástico · ODS 5</span>
+    <h1>Sus obras también cambiaron la historia.</h1>
+    <p>Una galería educativa para conocer a mujeres artistas, recuperar sus aportaciones y reflexionar sobre la igualdad de género desde las artes plásticas.</p>
+    <div class="cta">
+      <a class="btn primary" href="#artistas">Explorar artistas</a>
+      <a class="btn secondary" href="#ods">¿Por qué ODS 5?</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="container" id="ods">
+  <h2 class="section-title">Arte + Agenda 2030</h2>
+  <p class="section-sub">La aplicación toma como eje el ODS 5: lograr la igualdad de género y empoderar a todas las mujeres y niñas. También conecta con educación, reducción de desigualdades y sociedades inclusivas.</p>
+  <div class="ods-grid">
+    <article class="ods"><div class="num">05</div><h3>Igualdad de género</h3><p>Visibilizar creadoras y cuestionar estereotipos en la historia del arte.</p></article>
+    <article class="ods"><div class="num">04</div><h3>Educación de calidad</h3><p>Aprender historia del arte mediante perfiles, preguntas y recursos interactivos.</p></article>
+    <article class="ods"><div class="num">10</div><h3>Reducción de desigualdades</h3><p>Dar espacio a narrativas y trayectorias que fueron menos visibles en los relatos tradicionales.</p></article>
+    <article class="ods"><div class="num">16</div><h3>Sociedades inclusivas</h3><p>Promover respeto, participación, libertad de expresión y reconocimiento cultural.</p></article>
+  </div>
+</section>
+
+<section class="container" id="artistas">
+  <h2 class="section-title">Galería de creadoras</h2>
+  <p class="section-sub">Busca por nombre, movimiento o región. Las imágenes y colores de cada ficha cambian para relacionarse visualmente con la artista y su corriente.</p><p class="visual-note">Cada ficha tiene una paleta y una ilustración original inspirada en recursos visuales asociados con la artista o su corriente.</p>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="🔎 Buscar artista, movimiento o palabra clave...">
+    <select id="movement">
+      <option value="">Todos los movimientos</option>
+      <option>Barroco</option><option>Impresionismo</option><option>Modernismo</option>
+      <option>Surrealismo</option><option>Expresionismo abstracto</option><option>Arte contemporáneo</option>
+      <option>Arte feminista</option><option>Realismo</option>
+    </select>
+    <select id="region">
+      <option value="">Todas las regiones</option>
+      <option>Europa</option><option>América Latina</option><option>América del Norte</option><option>Asia</option><option>África</option><option>Medio Oriente</option><option>Oceanía</option>
+    </select>
+  </div>
+  <div class="art-grid" id="gallery"></div>
+</section>
+
+<section class="container" id="linea-tiempo">
+  <h2 class="section-title">Línea del tiempo</h2>
+  <p class="section-sub">Una selección de momentos para entender cómo las mujeres han participado en las artes visuales.</p>
+  <div class="timeline">
+    <div class="event"><h3>1593–1654 · Artemisia Gentileschi</h3><p>Una de las figuras más destacadas del barroco italiano; alcanzó reconocimiento profesional en un contexto artístico dominado por hombres.</p></div>
+    <div class="event"><h3>1841–1895 · Berthe Morisot</h3><p>Figura central del impresionismo; participó en exposiciones impresionistas y desarrolló una obra propia sobre vida moderna y espacios íntimos.</p></div>
+    <div class="event"><h3>1887–1986 · Georgia O'Keeffe</h3><p>Construyó una trayectoria decisiva en el arte moderno estadounidense con pinturas de flores, paisajes y formas abstractas.</p></div>
+    <div class="event"><h3>1907–1954 · Frida Kahlo</h3><p>Su obra autobiográfica exploró identidad, cuerpo, dolor, cultura y experiencia personal, convirtiéndose en una referencia internacional.</p></div>
+    <div class="event"><h3>1917–2011 · Leonora Carrington</h3><p>Artista y escritora vinculada al surrealismo; desarrolló un lenguaje propio de seres fantásticos, mitología e imaginación.</p></div>
+    <div class="event"><h3>1945– · Yayoi Kusama</h3><p>Su práctica interdisciplinaria utiliza repetición, puntos, instalaciones y espacios inmersivos para explorar percepción, identidad e infinito.</p></div>
+  </div>
+
+  <div class="quiz">
+    <h2>🎨 Mini reto: ¿cuánto aprendiste?</h2>
+    <p id="question">¿Qué ODS es el eje principal de esta aplicación?</p>
+    <div class="answers">
+      <button class="answer" onclick="answerQuiz(this,false)">ODS 2 · Hambre cero</button>
+      <button class="answer" onclick="answerQuiz(this,true)">ODS 5 · Igualdad de género</button>
+      <button class="answer" onclick="answerQuiz(this,false)">ODS 7 · Energía asequible</button>
+      <button class="answer" onclick="answerQuiz(this,false)">ODS 14 · Vida submarina</button>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="reflection" id="reflection" hidden>
+      <h3>🌷 Una reflexión para ti</h3>
+      <p id="reflectionText"></p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="proyecto">
+  <div class="about">
+    <div class="panel">
+      <h2 class="section-title">¿Qué busca esta aplicación?</h2>
+      <p>“Mujeres en la Historia del Arte” propone utilizar las artes plásticas como herramienta educativa para hacer visibles las contribuciones de las mujeres y abrir una conversación sobre quiénes aparecen —y quiénes quedan fuera— de los relatos históricos.</p>
+      <ul>
+        <li>Visibilizar artistas y sus aportaciones.</li>
+        <li>Relacionar arte, educación e igualdad de género.</li>
+        <li>Cuestionar estereotipos sobre quién puede ser artista.</li>
+        <li>Facilitar una experiencia de aprendizaje interactiva.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2 class="section-title">Indicadores del proyecto</h2>
+      <p>La app puede medir su impacto educativo con indicadores sencillos:</p>
+      <div class="stat"><div><span id="shown">25</span> artistas</div><div>11 movimientos</div><div>4 ODS relacionados</div></div>
+      <p style="margin-top:18px;color:var(--muted)">Idea de evaluación: comparar el conocimiento de los estudiantes antes y después de utilizar la aplicación.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot">
+    <p><strong>Mujeres en la Historia del Arte</strong> · Proyecto educativo inspirado en la Agenda 2030.</p>
+    <p>ODS 5 · Igualdad de género</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()" aria-label="Cerrar">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+const artists = [
+ {name:"Artemisia Gentileschi",years:"1593–c.1654",move:"Barroco",region:"Europa",class:"a1",keywords:"Italia mujeres barroco caravaggio pintura historia",visual:"https://upload.wikimedia.org/wikipedia/commons/3/32/Artemisia_Gentileschi_Selfportrait_Martyr.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original",bio:"Pintora italiana del barroco. Alcanzó reconocimiento profesional y desarrolló grandes composiciones históricas, religiosas y mitológicas, en un periodo en el que las mujeres enfrentaban fuertes barreras para acceder a la formación y a las redes artísticas.",why:"Su trayectoria permite estudiar el acceso de las mujeres a la educación artística, el reconocimiento profesional y la representación de figuras femeninas con agencia."},
+ {name:"Berthe Morisot",years:"1841–1895",move:"Impresionismo",region:"Europa",class:"a2",keywords:"Francia impresionismo modernidad mujer",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTORy21vcaDThvStdB_Mz-GpOKGRMpttJa8KwsuAzLEJ7oHvaJAK6Xck1g&s=10",bio:"Pintora francesa y figura fundamental del impresionismo. Participó activamente en las exposiciones impresionistas y desarrolló una mirada propia sobre escenas domésticas, espacios sociales y vida moderna.",why:"Ayuda a cuestionar la idea de que las mujeres fueron espectadoras del impresionismo: fueron creadoras y participantes de su desarrollo."},
+ {name:"Georgia O'Keeffe",years:"1887–1986",move:"Modernismo",region:"América del Norte",class:"a3",keywords:"Estados Unidos flores abstraccion modernismo paisaje",visual:"https://uploads8.wikiart.org/images/georgia-o-keeffe.jpg!Portrait.jpg",bio:"Artista estadounidense asociada al modernismo. Su lenguaje visual exploró flores, paisajes y formas abstractas con una escala y composición distintivas.",why:"Su carrera muestra cómo una artista puede construir una voz visual propia y convertirse en referente de la historia del arte moderno."},
+ {name:"Frida Kahlo",years:"1907–1954",move:"Modernismo",region:"América Latina",class:"a4",keywords:"Mexico identidad autorretrato cuerpo cultura",visual:"https://upload.wikimedia.org/wikipedia/commons/a/a1/Frida_Kahlo%2C_by_Guillermo_Kahlo_2.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original",bio:"Artista mexicana conocida por sus autorretratos y por una obra profundamente vinculada con identidad, cuerpo, experiencia personal, cultura y simbolismo.",why:"Permite conversar sobre identidad, representación del cuerpo y la capacidad del arte para transformar experiencias personales en discursos culturales."},
+ {name:"Leonora Carrington",years:"1917–2011",move:"Surrealismo",region:"América Latina",class:"a5",keywords:"Mexico surrealismo fantasia Inglaterra mujer",visual:"https://www.ordovasart.com/cms/wp-content/uploads/Leonora-Carrington.jpg",bio:"Artista y escritora nacida en Inglaterra y posteriormente vinculada a la escena artística mexicana. Desarrolló un universo visual propio inspirado en mitología, alquimia, animales y mundos fantásticos.",why:"Su obra permite analizar cómo las mujeres surrealistas construyeron imaginarios propios y desafiaron las narrativas dominantes del movimiento."},
+ {name:"Louise Bourgeois",years:"1911–2010",move:"Arte contemporáneo",region:"América del Norte",class:"a6",keywords:"Francia Estados Unidos escultura memoria contemporaneo",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDQTv88oFFR0D96QkBbK9B9WGif5j-mrEf7tOFWFhiHIHJe8DrUIT4hkA&s=10",bio:"Artista franco-estadounidense cuya práctica incluyó escultura, instalación, dibujo y grabado. Exploró memoria, relaciones familiares, cuerpo y emociones.",why:"Su trayectoria amplía la conversación sobre las mujeres como protagonistas de la escultura y del arte contemporáneo."},
+ {name:"Yayoi Kusama",years:"1929–",move:"Arte contemporáneo",region:"Asia",class:"a7",keywords:"Japon puntos instalaciones infinito contemporaneo",visual:"https://uploads7.wikiart.org/00321/images/yayoi-kusama/3-yayoikusama.JPG!Portrait.JPG",bio:"Artista japonesa reconocida por el uso de puntos, patrones repetitivos, instalaciones y espacios inmersivos. Su obra investiga percepción, repetición e infinito.",why:"Es un ejemplo de cómo una creadora puede construir una identidad artística internacional y transformar un recurso visual en un lenguaje reconocible."},
+ {name:"Faith Ringgold",years:"1930–2024",move:"Arte feminista",region:"América del Norte",class:"a8",keywords:"Estados Unidos feminismo derechos quilts pintura activismo",visual:"https://visarts.ucsd.edu/_images/people/Faith_Ringgold_in_front_of_Tar_Beach_2_1990_quilt_1993_Photo_by_Kathy_Willens_Fair_Use.jpg",bio:"Artista, autora y activista estadounidense. Trabajó con pintura, textiles, narración y libros infantiles, abordando identidad, raza, género y justicia social.",why:"Su producción demuestra cómo las artes plásticas pueden convertirse en una herramienta para contar historias, visibilizar comunidades y cuestionar desigualdades."},
+ {name:"Remedios Varo",years:"1908–1963",move:"Surrealismo",region:"América Latina",class:"a9",keywords:"Mexico España surrealismo ciencia magia",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8K-99zdlhmH_LvMg6R3xGTe2xQW-M3xG__RJqTxgzJ5GQvRg2D3vSh6N3&s=10",bio:"Pintora hispano-mexicana vinculada al surrealismo. Creó escenas imaginarias pobladas de personajes, máquinas, laboratorios y símbolos relacionados con conocimiento y transformación.",why:"Su obra ayuda a recuperar una perspectiva femenina del surrealismo y a explorar la relación entre arte, ciencia, imaginación y autonomía."},
+ {name:"Rosa Bonheur",years:"1822–1899",move:"Realismo",region:"Europa",class:"a10",keywords:"Francia animales realismo pintura mujeres",visual:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Andr%C3%A9_Adolphe-Eug%C3%A8ne_Disd%C3%A9ri_%28French_-_%28Rosa_Bonheur%29_-_Google_Art_Project.jpg/960px-Andr%C3%A9_Adolphe-Eug%C3%A8ne_Disd%C3%A9ri_%28French_-_%28Rosa_Bonheur%29_-_Google_Art_Project.jpg?utm_source=es.wikiquote.org&utm_campaign=index&utm_content=thumbnail",bio:"Pintora francesa especializada en representaciones de animales. Alcanzó reconocimiento internacional en el siglo XIX y construyó una carrera artística independiente.",why:"Su vida permite analizar cómo una mujer pudo abrirse camino profesionalmente en un campo con normas sociales muy restrictivas."},
+ {name:"María Izquierdo",years:"1902–1955",move:"Modernismo",region:"América Latina",class:"a11",keywords:"Mexico modernismo identidad pintura cultura",visual:"https://upload.wikimedia.org/wikipedia/commons/3/3e/Mar%C3%ADa_Izquierdo.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original",bio:"Pintora mexicana cuya obra incorporó escenas, símbolos y elementos culturales de México con una sensibilidad personal y moderna.",why:"Visibilizarla ayuda a ampliar la historia del arte mexicano más allá de los nombres tradicionalmente canonizados."},
+ {name:"Tamara de Lempicka",years:"1898–1980",move:"Modernismo",region:"Europa",class:"a12",keywords:"Polonia art deco retrato modernismo mujeres",visual:"https://e01-phantom-expansion.uecdn.es/b5758e774f09cb13911e11b14d911576/crop/218x48/1857x1140/resize/1200/f/webp/assets/multimedia/imagenes/2025/08/17/17554552028922.jpg",bio:"Pintora de origen polaco asociada al art déco y a la modernidad de entreguerras. Destacó especialmente por sus retratos y figuras de fuerte presencia visual.",why:"Su carrera permite hablar de autonomía artística, representación de mujeres y construcción de identidad en la cultura visual moderna."}
+,
+ {name:"Alma Thomas",years:"1891–1978",move:"Expresionismo abstracto",region:"América del Norte",class:"a3",keywords:"Estados Unidos abstracto color mosaico afroamericana educación",bio:"Pintora estadounidense que desarrolló un lenguaje abstracto basado en campos de color y pequeñas formas rítmicas. Después de una larga carrera como profesora de arte, alcanzó un amplio reconocimiento por su obra abstracta.",why:"Su trayectoria permite hablar de las barreras de género y raza en el reconocimiento artístico y del valor de la educación artística como espacio de participación.",more:"Thomas estudió arte y dedicó décadas a la enseñanza antes de concentrarse plenamente en su producción artística. Sus composiciones de color muestran cómo la abstracción puede transmitir ritmo, energía y emoción.",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3c9YblpixWsPBAXYeJQptCG2esvRcdjjTlMsNZ2U0JMbUe7waFLh9PSvs&s=10"},
+ {name:"Augusta Savage",years:"1892–1962",move:"Arte contemporáneo",region:"América del Norte",class:"a8",keywords:"Estados Unidos escultura Harlem afroamericana retrato educación",bio:"Escultora, educadora y activista estadounidense. Fue una figura importante del Renacimiento de Harlem y trabajó para ampliar las oportunidades de formación artística de jóvenes afroamericanos.",why:"Su vida conecta arte, educación y reducción de desigualdades, mostrando cómo una artista puede contribuir a transformar el acceso a la cultura.",more:"Savage realizó retratos y esculturas y participó en iniciativas educativas y comunitarias. Su trabajo también evidencia cómo el acceso a instituciones y recursos condicionó históricamente las carreras de muchas artistas.",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbVpj0l1yZTl7stA08PD33uPeFYeG0eHq8SGyepi91pQ&s=10"},
+ {name:"Betye Saar",years:"1926–",move:"Arte feminista",region:"América del Norte",class:"a6",keywords:"Estados Unidos ensamblaje grabado feminismo afroamericana memoria",bio:"Artista estadounidense conocida por sus ensamblajes, grabados e instalaciones. Su obra explora memoria, identidad, espiritualidad, historia y representación de las comunidades afroamericanas.",why:"Su producción demuestra cómo el arte puede recuperar memorias y cuestionar imágenes estereotipadas relacionadas con género, identidad y poder.",more:"Saar reutiliza objetos y materiales encontrados para construir composiciones cargadas de significado. Su práctica convierte objetos cotidianos en vehículos de memoria y crítica cultural.",visual:"https://upload.wikimedia.org/wikipedia/commons/5/57/Portrait_of_Betye_Saar._Site_Installations%2C_1989._A_Cultural_Presentation_of_the_United_States_of_America._-_DPLA_-_222f_r.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"},
+ {name:"Lygia Clark",years:"1920–1988",move:"Arte contemporáneo",region:"América Latina",class:"a12",keywords:"Brasil neoconcretismo participacion escultura sensorial",bio:"Artista brasileña vinculada al neoconcretismo. Transformó progresivamente la obra artística en una experiencia participativa y sensorial, cuestionando la separación tradicional entre objeto, artista y espectador.",why:"Su trabajo amplía la idea de quién participa en la creación artística y muestra el papel de las mujeres latinoamericanas en las vanguardias.",more:"Clark experimentó con formas articuladas, objetos manipulables y propuestas sensoriales. Su obra abrió caminos hacia prácticas participativas y contemporáneas.",visual:"data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20600%20360%22%3E%3Crect%20width%3D%22600%22%20height%3D%22360%22%20fill%3D%22%23b85c52%22/%3E%3Cpath%20d%3D%22M60%20290%20Q160%20120%20300%20250%20T540%20120%22%20fill%3D%22none%22%20stroke%3D%22%23e8c9a6%22%20stroke-width%3D%2280%22%20opacity%3D%22.85%22/%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22125%22%20r%3D%2255%22%20fill%3D%22%235f7890%22/%3E%3Cpath%20d%3D%22M215%20330%20Q300%20205%20385%20330Z%22%20fill%3D%22%23e8c9a6%22/%3E%3C/svg%3E"},
+ {name:"Tarsila do Amaral",years:"1886–1973",move:"Modernismo",region:"América Latina",class:"a4",keywords:"Brasil modernismo antropofagia color identidad latinoamerica",bio:"Pintora brasileña fundamental para el modernismo de su país. Su lenguaje combinó formas simplificadas, colores intensos y referencias culturales brasileñas.",why:"Su trayectoria permite reconocer la aportación de las mujeres a la construcción de identidades modernas en América Latina.",more:"Tarsila participó en el ambiente modernista brasileño y desarrolló una estética propia vinculada con paisajes, personajes y símbolos de su país.",visual:"https://uploads3.wikiart.org/00453/images/tarsila-do-amaral/tarsila-do-amaral-2.jpg!Portrait.jpg"},
+ {name:"Amrita Sher-Gil",years:"1913–1941",move:"Modernismo",region:"Asia",class:"a11",keywords:"India Hungria modernismo retrato mujeres pintura",bio:"Pintora de ascendencia india y húngara considerada una figura esencial del arte moderno de la India. Su obra combinó influencias europeas con temas y figuras de la vida india.",why:"Su trayectoria muestra cómo las mujeres artistas pueden construir lenguajes híbridos entre culturas y ampliar las narrativas de la modernidad artística.",more:"Sher-Gil estudió arte en Europa y posteriormente desarrolló una obra centrada en personas y escenas de la India. Su carrera, aunque breve, tuvo una influencia duradera.",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkPgIZwWqYGFnjyQoE8BaVHFucSUSplueUDT0KXi01RA&s=10"},
+ {name:"Mona Hatoum",years:"1952–",move:"Arte contemporáneo",region:"Medio Oriente",class:"a5",keywords:"Palestina Reino Unido instalación cuerpo espacio identidad",bio:"Artista nacida en Beirut en una familia palestina y radicada en el Reino Unido. Trabaja con instalación, escultura, performance y video para explorar cuerpo, desplazamiento, poder y vulnerabilidad.",why:"Su obra ayuda a comprender cómo el arte contemporáneo puede abordar identidad, movilidad, pertenencia y experiencias de mujeres.",more:"Hatoum suele transformar objetos cotidianos en formas ambiguas o inquietantes. Sus instalaciones invitan al espectador a reconsiderar espacios familiares y relaciones de poder.",visual:"https://uploads2.wikiart.org/00347/images/mona-hatoum/ft-mona-hatoum-3.jpg!Portrait.jpg"},
+ {name:"Shirin Neshat",years:"1957–",move:"Arte contemporáneo",region:"Medio Oriente",class:"a2",keywords:"Iran fotografia video feminismo identidad islam",bio:"Artista iraní radicada en Estados Unidos, reconocida por fotografía, video y cine. Su obra aborda identidad, género, religión, poder y las experiencias de mujeres en contextos iraníes.",why:"Su trabajo ofrece una perspectiva crítica sobre género y representación cultural y permite discutir cómo las mujeres construyen sus propias narrativas visuales.",more:"Neshat utiliza con frecuencia imágenes en blanco y negro, escritura y puesta en escena para crear contrastes entre lo íntimo y lo político.",visual:"https://thegentlewoman.co.uk/img/TVZOWHU1UGZRQ2VkaHdCdEg3V0V5QT09/shirin-01.jpg"},
+ {name:"Njideka Akunyili Crosby",years:"1983–",move:"Arte contemporáneo",region:"África",class:"a7",keywords:"Nigeria Estados Unidos collage pintura migracion identidad contemporaneo",bio:"Artista nigeriano-estadounidense que combina pintura, collage, fotografía transferida y referencias culturales para representar experiencias de identidad, hogar y migración.",why:"Su obra muestra cómo las perspectivas de mujeres africanas y de la diáspora enriquecen el arte contemporáneo y cuestionan fronteras culturales.",more:"Sus composiciones reúnen interiores domésticos, fotografías y patrones que crean capas visuales. La convivencia de referencias nigerianas y estadounidenses es central en su lenguaje.",visual:"https://static01.nyt.com/images/2023/05/22/multimedia/21njideka-crosby1-fmhp/21njideka-crosby1-fmhp-superJumbo.jpg"},
+  {name:"Tracey Moffatt",years:"1960–",move:"Arte contemporáneo",region:"Oceanía",class:"a10",keywords:"Australia fotografia video aborigen narrativa identidad",bio:"Artista australiana que trabaja principalmente con fotografía, video y narración visual. Sus obras exploran identidad, memoria, representación y relaciones sociales.",why:"Su trayectoria permite ampliar la representación geográfica de la historia del arte y analizar cómo una artista puede cuestionar las formas tradicionales de contar historias.",more:"Moffatt construye escenas cuidadosamente compuestas y utiliza recursos cinematográficos para crear relatos que pueden ser personales, históricos y críticos.",visual:"https://images.squarespace-cdn.com/content/v1/5702ab9d746fb9634796c9f9/fa97e023-b76c-4ec7-9c80-b50ff04ffbbf/Moffatt_portrait.jpeg"},
+ {name:"Yuki Kihara",years:"1975–",move:"Arte contemporáneo",region:"Oceanía",class:"a1",keywords:"Samoa Nueva Zelanda fotografia performance identidad genero oceania",bio:"Artista samoana-neozelandesa cuya práctica combina fotografía, performance, instalación y referencias a la cultura samoana. Explora género, colonialismo, identidad y tradición.",why:"Su trabajo incorpora una perspectiva del Pacífico y muestra la diversidad de experiencias de género y cultura presentes en el arte contemporáneo.",more:"Kihara utiliza autorrepresentación, vestuario y puesta en escena para reinterpretar imágenes históricas y narrativas coloniales desde una perspectiva samoana.",visual:"https://d2935izqpq0pg2.cloudfront.net/transforms/_1920x1440_crop_center-center_75_none_ns/726/Yuki-Kihara-photo-by-Gui-Taccetti.webp"},
+ {name:"Lubaina Himid",years:"1954–",move:"Arte feminista",region:"África",class:"a12",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXCA4M0778ej81l8F139Vq46XOq2jv5PFsxOGKFM0Oh-jMDjinJ4WjOyU&s=10",keywords:"Tanzania Reino Unido pintura afrodescendiente feminismo historia",bio:"Artista nacida en Zanzíbar y radicada en el Reino Unido. Su pintura aborda historia, colonialismo, diáspora africana, trabajo, representación y experiencias de personas negras.",why:"Su obra recupera historias y sujetos poco representados en el canon artístico y conecta la creación visual con la memoria y la igualdad.",more:"Himid utiliza escenas cuidadosamente construidas, objetos y referencias históricas para imaginar relaciones sociales alternativas y recuperar voces de la diáspora.",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXCA4M0778ej81l8F139Vq46XOq2jv5PFsxOGKFM0Oh-jMDjinJ4WjOyU&s=10"},
+ {name:"Miriam Makeba",years:"1932–2008",move:"Arte contemporáneo",region:"África",class:"a4",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS37ctOXbrz8FS3iLUjrxMPTt2eMLRjsIhaLXa-HaRAm_fNWs8ymaQY54w&s=10",keywords:"Sudafrica cultura musica apartheid mujeres identidad",bio:"Aunque es principalmente conocida como cantante y activista, su figura puede utilizarse como referencia interdisciplinaria sobre representación cultural, identidad y resistencia en el contexto sudafricano.",why:"Su presencia permite conectar las artes visuales con otras expresiones culturales y estudiar cómo las mujeres utilizan la cultura para defender dignidad y participación.",more:"Su trayectoria es útil como cápsula interdisciplinaria, no como ejemplo exclusivo de artes plásticas.",visual:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS37ctOXbrz8FS3iLUjrxMPTt2eMLRjsIhaLXa-HaRAm_fNWs8ymaQY54w&s=10"}];
+
+const gallery=document.getElementById("gallery"), search=document.getElementById("search"), movement=document.getElementById("movement"), region=document.getElementById("region");
+
+function render(){
+  const q=search.value.toLowerCase().trim(), m=movement.value, r=region.value;
+  const list=artists.filter(a=>(!q || `${a.name} ${a.move} ${a.region} ${a.keywords}`.toLowerCase().includes(q)) && (!m||a.move===m) && (!r||a.region===r));
+  document.getElementById("shown").textContent=list.length;
+  if(!list.length){gallery.innerHTML='<div class="empty">No encontramos resultados. Prueba con otro nombre, movimiento o región.</div>';return;}
+  gallery.innerHTML=list.map((a,i)=>`
+    <article class="card">
+      <div class="art ${a.class}" style="--artist-image:url('${a.visual}')" aria-label="Imagen artística inspirada en ${a.name}"></div>
+      <div class="card-body">
+        <span class="tag">${a.move}</span>
+        <h3>${a.name}</h3>
+        <div class="meta">${a.years} · ${a.region} · ${a.move}</div>
+        <p>${a.bio}</p>
+        <div class="card-actions">
+          <button class="small" onclick="showArtist(${artists.indexOf(a)})">Ver perfil</button>
+          <button class="small" onclick="saveArtist('${a.name.replace(/'/g,"\\'")}')">☆ Guardar</button>
+        </div>
+      </div>
+    </article>`).join("");
+}
+search.addEventListener("input",render); movement.addEventListener("change",render); region.addEventListener("change",render);
+
+function showArtist(i){
+  const a=artists[i];
+  document.getElementById("modalContent").innerHTML=`
+    <div class="modal-portrait" style="background-image:url('${a.visual}')"></div>
+    <span class="tag">${a.move}</span>
+    <h2>${a.name}</h2>
+    <p><strong>${a.years}</strong> · ${a.region}</p>
+    <h3>Trayectoria</h3><p>${a.bio}</p>
+    <h3>Más sobre su obra</h3><p>${a.more || "Esta sección puede ampliarse con obras, fechas y recursos de investigación."}</p>
+    <h3>¿Qué aporta al ODS 5?</h3><p>${a.why}</p>
+    <div class="stat"><div>Arte y cultura</div><div>Visibilidad</div><div>Educación</div><div>${a.region}</div></div>`;
+  document.getElementById("modal").classList.add("open");
+}
+function closeModal(){document.getElementById("modal").classList.remove("open")}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+function saveArtist(name){
+  let saved=JSON.parse(localStorage.getItem("mujeresArteSaved")||"[]");
+  if(!saved.includes(name)) saved.push(name);
+  localStorage.setItem("mujeresArteSaved",JSON.stringify(saved));
+  alert(`"${name}" se guardó en tu lista de artistas.`);
+}
+function answerQuiz(btn,correct){
+  document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+  const result=document.getElementById("result");
+  const reflection=document.getElementById("reflection");
+  const reflectionText=document.getElementById("reflectionText");
+  if(correct){
+    result.textContent="✓ ¡Correcto! El ODS 5 busca lograr la igualdad de género y empoderar a todas las mujeres y niñas.";
+    result.style.color="#b9e2c8";
+    reflection.hidden=false;
+    reflectionText.textContent="Las historias de estas artistas nos recuerdan que crear también es una forma de expresar nuestra voz. No importa si una niña sueña con pintar, dibujar, esculpir, diseñar, fotografiar o imaginar mundos nuevos: su creatividad merece un espacio. Que conocer a estas mujeres sirva para recordar que no existen sueños demasiado grandes ni caminos reservados para otros. Cada idea que una niña convierte en arte puede abrir una puerta para ella y para quienes vengan después. Sigue creando, experimentando y contando tus propias historias: tu mirada también puede transformar el mundo.";
+    reflection.scrollIntoView({behavior:"smooth",block:"center"});
+  }else{
+    result.textContent="Casi. El eje principal de la aplicación es el ODS 5: Igualdad de género.";
+    result.style.color="#ffd1b5";
+  }
+}
+render();
+</script>
+</body>
+</html>
